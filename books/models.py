@@ -22,6 +22,7 @@ class Book(models.Model):
     author=models.ForeignKey(Author,related_name='books',on_delete=models.CASCADE)
     publishDate=models.DateTimeField()
     NoOfPages=models.IntegerField(default=1,validators=[MinValueValidator(1)])
+    image=models.ImageField(upload_to="images",default="")
 
     def __str__(self):
         return f"Book name is {self.name} and is written by {self.author.name}"

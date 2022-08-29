@@ -4,11 +4,13 @@ from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIVi
 
 from .models import Author,Book
 from .serializers import AuthorSerializer,BookSerializer
+from rest_framework.parsers import MultiPartParser,FormParser
 
 class GetAddAuthorView(ListCreateAPIView):
     queryset=Author.objects.all()
     serializer_class=AuthorSerializer
     name="List Author"
+    parser_classes=(MultiPartParser,FormParser)
     
     
 
