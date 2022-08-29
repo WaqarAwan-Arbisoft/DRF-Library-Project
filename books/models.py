@@ -21,7 +21,7 @@ class Book(models.Model):
     name=models.CharField(max_length=150,blank=False,unique=True,default='')
     author=models.ForeignKey(Author,related_name='books',on_delete=models.CASCADE)
     publishDate=models.DateTimeField()
-    NoOfPages=models.IntegerField()
+    NoOfPages=models.IntegerField(default=1,validators=[MinValueValidator(1)])
 
     def __str__(self):
         return f"Book name is {self.name} and is written by {self.author.name}"
