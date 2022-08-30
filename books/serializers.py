@@ -7,6 +7,7 @@ class AuthorSerializer(serializers.ModelSerializer):
         fields=('pk','name','address','gender','age')
 
 class BookSerializer(serializers.ModelSerializer):
+    author=AuthorSerializer()
     image=serializers.FileField()
     class Meta:
         model=Book
