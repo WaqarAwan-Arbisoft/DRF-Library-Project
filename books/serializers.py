@@ -1,14 +1,16 @@
 from rest_framework import serializers
-from .models import Author,Book
+from .models import Author, Book
+
 
 class AuthorSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model=Author
-        fields=('pk','name','address','gender','age')
+        model = Author
+        fields = ('pk', 'name', 'address', 'gender', 'age')
+
 
 class BookSerializer(serializers.ModelSerializer):
-    author=AuthorSerializer()
-    image=serializers.FileField()
+    # author = AuthorSerializer()
     class Meta:
-        model=Book
-        fields=('pk','name','author','publishDate','NoOfPages','image')
+        model = Book
+        fields = ('pk', 'name', 'author', 'publishDate', 'NoOfPages', 'image')

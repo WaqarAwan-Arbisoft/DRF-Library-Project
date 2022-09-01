@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-5d^8$q5hi(a4oa^fi(bin9=f1p(3(h#@&tuy5^3yk8b^ypzw3o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -130,11 +129,7 @@ MEDIA_URL = "/media/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:3000',
-    'http://localhost:3000',
-]
+CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_METHODS = [
     "DELETE",
@@ -144,3 +139,9 @@ CORS_ALLOW_METHODS = [
     "POST",
     "PUT",
 ]
+# REST_FRAMEWORK = {
+#     'DEFAULT_PARSER_CLASSES': (
+#         'rest_framework.parsers.FormParser',
+#         'rest_framework.parsers.MultiPartParser'
+#     )
+# }
