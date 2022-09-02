@@ -10,7 +10,8 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 
 class BookSerializer(serializers.ModelSerializer):
-    # author = AuthorSerializer()
+    author = AuthorSerializer()
+
     class Meta:
         model = Book
         fields = ('pk', 'name', 'author', 'publishDate', 'NoOfPages', 'image')
